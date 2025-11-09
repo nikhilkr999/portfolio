@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nikhil Kumar - Android Developer Portfolio</title>
+    <meta name="description" content="Experienced Android Developer specializing in Kotlin, Jetpack Compose, and scalable mobile apps. View my projects and get in touch!">
+    <meta property="og:title" content="Nikhil Kumar - Android Developer">
+    <meta property="og:description" content="Building intuitive Android experiences with modern tools.">
+    <meta property="og:image" content="profile.jpg">
+    <!-- LINK TO CSS: Ensure styles.css is in the SAME folder as this file -->
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Dark Mode Toggle -->
+    <button id="darkModeToggle" class="dark-mode-toggle">🌙</button>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <img src="images/Nikhil Dp.png" alt="Nikhil Kumar - Android Developer" class="profile-img">
+            <h1 data-aos="fade-up">Hi, I'm <span class="highlight">Nikhil Kumar</span></h1>
+            <p data-aos="fade-up" data-aos-delay="200">Android Developer passionate about crafting seamless, user-centric mobile experiences with Kotlin and modern Jetpack tools.</p>
+            <a href="#projects" class="cta-button" data-aos="fade-up" data-aos-delay="400">Explore My Work</a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <h2 data-aos="fade-up">About Me</h2>
+        <div class="about-content" data-aos="fade-up" data-aos-delay="200">
+            <p>Android Developer with 1+ years of hands-on experience building and deploying scalable, user-friendly mobile applications.</p>
+            <p>I am passionate about creating apps that offer both smooth performance and a great user experience, and I'm seeking
+                 opportunities to contribute my technical and problem-solving skills to innovative mobile projects.</p>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects">
+        <h2 data-aos="fade-up">Featured Projects</h2>
+        <div class="project-grid">
+            <div class="project-card" data-aos="fade-up" data-aos-delay="100" 
+                 data-title="Github Search App" data-desc="Built an Android app that allows users to search GitHub profiles and view their public repositories with smooth UI and fast search capabilities." 
+                 data-tech="Kotlin, Jetpack Compose, Retrofit, Room DB, Hilt DI" data-images="projectImages/githubSearch/img3.png,projectImages/githubSearch/img1.png,projectImages/githubSearch/img2.png"
+                 data-gh="https://github.com/nikhilkr999/Github-User-Search" data-ps="https://play.google.com/store/apps/details?id=com.nikhil.taskflow">
+                <div class="project-images">
+                    <img src="projectImages/githubSearch/img3.png" alt="Github Search App Screenshot 1" loading="lazy">
+                    <img src="projectImages/githubSearch/img1.png" alt="Github Search App Screenshot 2" loading="lazy">
+                    <img src="projectImages/githubSearch/img2.png" alt="Github Search App Screenshot 3" loading="lazy">
+                </div>
+                <h3>Github Search App</h3>
+                <p>Built an Android app that allows users to search GitHub profiles and view their public repositories.</p>
+                <div class="project-links">
+                    <a href="https://github.com/nikhilkr999/Github-User-Search" class="gh-link">GitHub</a>
+                    <a href="#" class="ps-link">Play Store</a>
+                </div>
+            </div>
+            
+            <div class="project-card" data-aos="fade-up" data-aos-delay="200" 
+                 data-title="ExpenseTracker App" data-desc="Developed a comprehensive mobile application for personal finance management,
+                  enabling users to track daily expenses, analyze spending patterns, and export data.Key features include:
+                  
+                  Expense Tracking: Add, edit, and categorize expenses with intuitive UI and real-time updates.
+
+                  Visual Insights: Interactive charts and summaries to analyze spending by category, date, or payment method.
+
+                  Category Management: Custom categories with icons and color themes for personalized organization.
+
+                  Modern UI/UX: Built with Kotlin, Jetpack Compose, and MVVM architecture for clean, maintainable code.
+                  " 
+                 data-tech="Kotlin, Room, MVVM" data-images="projectImages/ExpenceTracker/img3.png,projectImages/ExpenceTracker/img2.png,projectImages/ExpenceTracker/img1.png"
+                 data-gh="https://github.com/nikhilkr999/Expense-Tracker-App" data-ps="https://play.google.com/store/apps/details?id=com.nikhil.fittrack">
+                <div class="project-images">
+                    <img src="projectImages/ExpenceTracker/img3.png" alt="ExpenceTracker App Screenshot 1" loading="lazy">
+                    <img src="projectImages/ExpenceTracker/img2.png" alt="ExpenceTracker App Screenshot 2" loading="lazy">
+                    <img src="projectImages/ExpenceTracker/img1.png" alt="ExpenceTracker App Screenshot 3" loading="lazy">
+                </div>
+                <h3>ExpenseTracker App</h3>
+                <p>Developed a comprehensive mobile application for personal finance management, enabling users to track daily expenses, analyze spending patterns, and export data</p>
+                <div class="project-links">
+                    <a href="https://github.com/nikhilkr999/Expense-Tracker-App" class="gh-link">GitHub</a>
+                    <a href="#" class="ps-link">Play Store</a>
+                </div>
+            </div>
+            <div class="project-card" data-aos="fade-up" data-aos-delay="300" 
+                 data-title="E-commerce website clone" data-desc="Created a responsive e-commerce website clone replicating the UI and layout of a modern shopping platform.
+Focused on pixel-perfect design, product grid layout, and interactive navigation experience." 
+                 data-tech="html, css, javascript" data-images="projectImages/ecommWeb/img4.png,projectImages/ecommWeb/img3.png,projectImages/ecommWeb/img1.png"
+                 data-gh="https://github.com/nikhilkr999/Responsive-E-Commerce-Website" data-apk="https://nikhilkr999.github.io/Responsive-E-Commerce-Website/"> <!-- Change to your APK if available -->
+                <div class="project-images">
+                    <img src="projectImages/ecommWeb/img4.png" alt="EcoShop Screenshot 1" loading="lazy">
+                    <img src="projectImages/ecommWeb/img3.png" alt="EcoShop Screenshot 2" loading="lazy">
+                    <img src="projectImages/ecommWeb/img1.png" alt="EcoShop Screenshot 3" loading="lazy">
+                </div>
+                <h3>E-commerce website clone</h3>
+                <p>Created a responsive e-commerce website clone replicating the UI and layout of a modern shopping platform.</p>
+                <div class="project-links">
+                    <a href="https://github.com/nikhilkr999/Responsive-E-Commerce-Website" class="gh-link">GitHub</a>
+                    <a href="https://nikhilkr999.github.io/Responsive-E-Commerce-Website/" class="apk-link" download>Live Demo</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+<!-- Skills Section -->
+<section id="skills" class="skills">
+    <h2 data-aos="fade-up">Skills & Tools</h2>
+    <ul class="skills-list" data-aos="fade-up" data-aos-delay="200">
+        <li data-aos="zoom-in" data-aos-delay="100">Kotlin</li>
+        <li data-aos="zoom-in" data-aos-delay="200">Java</li>
+        <li data-aos="zoom-in" data-aos-delay="300">C</li>
+        <li data-aos="zoom-in" data-aos-delay="400">C++</li>
+        <li data-aos="zoom-in" data-aos-delay="500">Jetpack Compose</li>
+        <li data-aos="zoom-in" data-aos-delay="600">Firebase</li>
+        <li data-aos="zoom-in" data-aos-delay="700">Room & Retrofit</li>
+        <li data-aos="zoom-in" data-aos-delay="800">MVVM Architecture</li>
+        <li data-aos="zoom-in" data-aos-delay="900">Android Studio</li>
+        <li data-aos="zoom-in" data-aos-delay="1000">Postman</li>
+        <li data-aos="zoom-in" data-aos-delay="1100">MobaXterm</li>
+    </ul>
+</section>
+
+
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <h2 data-aos="fade-up">Get in Touch</h2>
+        <p data-aos="fade-up" data-aos-delay="200">Ready to discuss a project or collaboration? Drop me a line!</p>
+        <form id="contactForm" data-aos="fade-up" data-aos-delay="400">
+            <input type="text" name="name" placeholder="Your Name" required>
+            <input type="email" name="email" placeholder="Your Email" required>
+            <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+        <div class="contact-links" data-aos="fade-up" data-aos-delay="600">
+            <p>Email: nk17cse0351@gmail.com</p>
+            <p>
+                <a href="https://www.linkedin.com/in/nikhil-kumar-6b60aa235/" target="_blank">LinkedIn</a> |
+                <a href="https://github.com/nikhilkr999" target="_blank">GitHub</a>
+            </p>
+            <a href="nikhil_cv.pdf" download data-aos="fade-up" data-aos-delay="800">Download Resume</a>
+        </div>
+    </section>
+
+    <!-- Project Modal -->
+    <div id="projectModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2 id="modalTitle"></h2>
+            <p id="modalDesc"></p>
+            <div id="modalTech" class="tech-badges"></div>
+            <div id="modalImages" class="modal-images"></div>
+            <div id="modalLinks" class="modal-links"></div>
+        </div>
+    </div>
+    </div>
+
+        <div id="imageModal" class="image-modal">
+        <span class="image-close">&times;</span>
+        <img class="modal-image-content" id="fullImage">
+    </div>
+
+    <!-- AOS JS CDN -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <!-- LINK TO JS: Ensure script.js is in the SAME folder -->
+    <script src="script.js"></script>
+</body>
+</html>
