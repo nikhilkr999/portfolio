@@ -56,41 +56,72 @@ form.addEventListener('submit', async (e) => {
 });
 
 // Project Modal Functionality
+// Project Modal Functionality
 const modal = document.getElementById('projectModal');
 const cards = document.querySelectorAll('.project-card');
 
 cards.forEach(card => {
     card.addEventListener('click', (e) => {
-        // Prevent link clicks from triggering modal
         if (e.target.closest('.project-links a')) return;
-        
+
         const title = card.dataset.title;
         const desc = card.dataset.desc;
         const tech = card.dataset.tech;
-        const images = card.dataset.images.split(',');
         const gh = card.dataset.gh;
         const ps = card.dataset.ps || '';
         const apk = card.dataset.apk || '';
+        const images = card.dataset.images ? card.dataset.images.split(',') : [];
+        const video = card.dataset.video || '';
 
-        // Populate Modal
+        // Populate common fields
         document.getElementById('modalTitle').textContent = title;
         document.getElementById('modalDesc').textContent = desc;
-        
+
         const techContainer = document.getElementById('modalTech');
         techContainer.innerHTML = tech.split(',').map(t => `<span>${t.trim()}</span>`).join('');
 
         const imagesContainer = document.getElementById('modalImages');
-        imagesContainer.innerHTML = images.map(img => `<img src="${img.trim()}" alt="${title} Screenshot" loading="lazy">`).join('');
+        imagesContainer.innerHTML = ''; // clear previous content
 
+        if (video) {
+            // Video project
+            const videoEl = document.createElement('video');
+            videoEl.src = video;
+            videoEl.controls = true;
+            videoEl.autoplay = false;
+            videoEl.style.width = '100%';
+            videoEl.style.maxHeight = '70vh';
+            videoEl.style.borderRadius = '8px';
+            videoEl.style.background = '#000';
+
+            // Fullscreen on click
+            videoEl.addEventListener('click', () => {
+                if (videoEl.requestFullscreen) videoEl.requestFullscreen();
+                else if (videoEl.webkitRequestFullscreen) videoEl.webkitRequestFullscreen();
+                else if (videoEl.msRequestFullscreen) videoEl.msRequestFullscreen();
+            });
+
+            imagesContainer.appendChild(videoEl);
+        } else if (images.length > 0) {
+            // Image project (existing behavior)
+            images.forEach(img => {
+                const imgEl = document.createElement('img');
+                imgEl.src = img.trim();
+                imgEl.alt = `${title} Screenshot`;
+                imgEl.loading = 'lazy';
+                imagesContainer.appendChild(imgEl);
+            });
+        }
+
+        // Links
         const linksContainer = document.getElementById('modalLinks');
         let linksHTML = `<a href="${gh}" target="_blank">View on GitHub</a>`;
         if (ps) linksHTML += ` <a href="${ps}" target="_blank">Play Store</a>`;
-        if (apk) linksHTML += ` <a href="${apk}" download>Live Demo</a>`;
+        if (apk) linksHTML += ` <a href="${apk}" target="_blank">Live Demo</a>`;
         linksContainer.innerHTML = linksHTML;
 
-        // Show Modal
         modal.style.display = 'block';
-        document.body.style.overflow = 'hidden'; // Prevent scroll
+        document.body.style.overflow = 'hidden';
     });
 });
 

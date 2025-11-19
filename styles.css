@@ -360,3 +360,41 @@ form button:hover { background: #5a67d8; }
         max-height: 250px; /* Slightly shorter on small screens */
     }
 }
+/* Video in project card (grid preview) */
+.project-video {
+    position: relative;
+    height: 200px;
+    margin-bottom: 1rem;
+    border-radius: 8px;
+    overflow: hidden;
+    background: #000;
+}
+
+.project-video video {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    border-radius: 8px;
+}
+
+/* Optional: subtle play icon overlay (purely cosmetic) */
+.project-video::after {
+    content: '▶';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 3rem;
+    color: rgba(255,255,255,0.4);
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+.project-card:hover .project-video::after {
+    opacity: 0.6;
+}
+@media (max-width: 768px) {
+    #modalImages video {
+        max-height: 50vh;
+    }
+}
