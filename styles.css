@@ -398,3 +398,131 @@ form button:hover { background: #5a67d8; }
         max-height: 50vh;
     }
 }
+
+/* --- Certifications Section --- */
+
+.cert-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.cert-card {
+    background: var(--secondary-bg);
+    border-radius: 12px; /* Slightly more rounded */
+    box-shadow: var(--shadow);
+    overflow: hidden; /* Ensures image stays inside rounded corners */
+    display: flex;
+    flex-direction: column; /* Stack image on top of text */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid rgba(0,0,0,0.05); /* Subtle border */
+}
+
+.cert-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 24px rgba(0,0,0,0.15);
+}
+
+/* Image Container */
+.cert-preview {
+    width: 100%;
+    height: 180px; /* Fixed height for uniformity */
+    background-color: #f0f0f0;
+    overflow: hidden;
+    position: relative;
+    border-bottom: 1px solid rgba(0,0,0,0.05);
+}
+
+.cert-preview img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Zooms to fill the area nicely */
+    object-position: center;
+    transition: transform 0.5s ease;
+}
+
+/* Zoom effect on hover */
+.cert-card:hover .cert-preview img {
+    transform: scale(1.05);
+}
+
+.cert-content {
+    padding: 1.5rem;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1; /* Ensures buttons align at bottom even if text length varies */
+}
+
+.cert-content h3 {
+    margin: 0 0 0.5rem 0;
+    font-size: 1.2rem;
+    color: var(--text-color);
+}
+
+.cert-content .issuer {
+    margin: 0 0 1rem 0;
+    font-size: 0.95rem;
+    color: var(--accent-color);
+    font-weight: 600;
+}
+
+.cert-actions {
+    margin-top: auto; /* Pushes button to the bottom */
+}
+
+/* Verify Button Styling */
+.btn-verify {
+    display: block;
+    width: 100%;
+    text-align: center;
+    padding: 0.8rem;
+    background: transparent;
+    color: var(--accent-color);
+    border: 2px solid var(--accent-color);
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.btn-verify:hover {
+    background: var(--accent-color);
+    color: white;
+}
+
+/* Dark Mode Tweaks */
+[data-theme="dark"] .cert-card {
+    border: 1px solid rgba(255,255,255,0.1);
+}
+/* =========================================
+   DARK MODE FIXES FOR CERTIFICATES
+   ========================================= */
+
+/* 1. Make the 'Issuer' text (e.g., NPTEL, Udemy) a light pastel blue so it stands out */
+[data-theme="dark"] .cert-content .issuer {
+    color: #90caf9; 
+}
+
+/* 2. Make the Verify Button WHITE in dark mode for maximum contrast */
+[data-theme="dark"] .btn-verify {
+    color: #ffffff;
+    border-color: #ffffff;
+    opacity: 0.9;
+}
+
+/* 3. When hovering in dark mode, turn the button solid white with dark text */
+[data-theme="dark"] .btn-verify:hover {
+    background: #ffffff;
+    color: #1a1a1a; /* Dark text to read against white button */
+    opacity: 1;
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.4); /* Add a subtle glow */
+}
+
+/* 4. Optional: Make the card background slightly lighter than the page background */
+[data-theme="dark"] .cert-card {
+    background: #2d2d2d; 
+    border: 1px solid #444;
+}
