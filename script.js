@@ -6,12 +6,12 @@ AOS.init({
 });
 
 // Smooth Scrolling for Nav Links
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+document.querySelectorAll('a[href^="#"]:not([href="#"])').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
+        const target = document.querySelector(this.getAttribute('href'));
+        if (!target) return;
         e.preventDefault();
-        document.querySelector(this.getAttribute('href')).scrollIntoView({
-            behavior: 'smooth'
-        });
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
     });
 });
 
@@ -19,43 +19,54 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 const toggle = document.getElementById('darkModeToggle');
 const body = document.body;
 
-toggle.addEventListener('click', () => {
-    body.dataset.theme = body.dataset.theme === 'dark' ? 'light' : 'dark';
-    toggle.textContent = body.dataset.theme === 'dark' ? '☀️' : '🌙';
-});
-
-// Load saved theme
-if (localStorage.getItem('theme') === 'dark' || 
-    (!localStorage.getItem('theme') && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-    body.dataset.theme = 'dark';
-    toggle.textContent = '☀️';
+function applyTheme(theme) {
+    if (theme === 'dark') {
+        body.dataset.theme = 'dark';
+        toggle.textContent = '\u2600\uFE0F';
+        toggle.setAttribute('aria-label', 'Switch to light mode');
+    } else {
+        delete body.dataset.theme;
+        toggle.textContent = '\u{1F319}';
+        toggle.setAttribute('aria-label', 'Switch to dark mode');
+    }
+    localStorage.setItem('theme', theme);
 }
 
-// Contact Form Submission (via Formspree - replace 'your-form-id' with yours from formspree.io)
+const savedTheme = localStorage.getItem('theme');
+const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+applyTheme(savedTheme || (prefersDark ? 'dark' : 'light'));
+
+toggle.addEventListener('click', () => {
+    applyTheme(body.dataset.theme === 'dark' ? 'light' : 'dark');
+});
+
+window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (event) => {
+    if (!localStorage.getItem('theme')) {
+        applyTheme(event.matches ? 'dark' : 'light');
+    }
+});
+
+// Contact Form Submission via mailto fallback (no backend required)
 const form = document.getElementById('contactForm');
 form.addEventListener('submit', async (e) => {
     e.preventDefault();
     const formData = new FormData(form);
-    try {
-        const response = await fetch('https://formspree.io/f/xyzbdjja', {
-            method: 'POST',
-            body: formData,
-            headers: {
-                'Accept': 'application/json'
-            }
-        });
-        if (response.ok) {
-            alert('Thanks for your message! I\'ll get back to you soon.');
-            form.reset();
-        } else {
-            alert('Oops! There was a problem submitting the form. Try emailing me directly.');
-        }
-    } catch (error) {
-        alert('Network error. Please try again.');
-    }
+    const name = String(formData.get('name') || '').trim();
+    const email = String(formData.get('email') || '').trim();
+    const message = String(formData.get('message') || '').trim();
+    const recipient = form.dataset.email || 'nk17cse0351@gmail.com';
+
+    const subject = encodeURIComponent(`Portfolio inquiry from ${name || 'visitor'}`);
+    const body = encodeURIComponent(
+        `Name: ${name || 'Not provided'}\n` +
+        `Email: ${email || 'Not provided'}\n\n` +
+        `${message || 'No message provided.'}`
+    );
+
+    window.location.href = `mailto:${recipient}?subject=${subject}&body=${body}`;
+    form.reset();
 });
 
-// Project Modal Functionality
 // Project Modal Functionality
 const modal = document.getElementById('projectModal');
 const cards = document.querySelectorAll('.project-card');
@@ -68,6 +79,7 @@ cards.forEach(card => {
         const desc = card.dataset.desc;
         const tech = card.dataset.tech;
         const gh = card.dataset.gh;
+        const site = card.dataset.site || '';
         const ps = card.dataset.ps || '';
         const apk = card.dataset.apk || '';
         const images = card.dataset.images ? card.dataset.images.split(',') : [];
@@ -116,8 +128,9 @@ cards.forEach(card => {
         // Links
         const linksContainer = document.getElementById('modalLinks');
         let linksHTML = `<a href="${gh}" target="_blank">View on GitHub</a>`;
-        if (ps) linksHTML += ` <a href="${ps}" target="_blank">Play Store</a>`;
-        if (apk) linksHTML += ` <a href="${apk}" target="_blank">Live Demo</a>`;
+        if (site) linksHTML += ` <a href="${site}" target="_blank" rel="noopener noreferrer">Website</a>`;
+        if (ps) linksHTML += ` <a href="${ps}" target="_blank" rel="noopener noreferrer">Play Store</a>`;
+        if (apk) linksHTML += ` <a href="${apk}" target="_blank" rel="noopener noreferrer">Live Demo</a>`;
         linksContainer.innerHTML = linksHTML;
 
         modal.style.display = 'block';

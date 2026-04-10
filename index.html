@@ -8,14 +8,16 @@
     <meta property="og:title" content="Nikhil Kumar - Android Developer">
     <meta property="og:description" content="Building intuitive Android experiences with modern tools.">
     <meta property="og:image" content="profile.jpg">
-    <!-- LINK TO CSS: Ensure styles.css is in the SAME folder as this file -->
+    <meta name="theme-color" content="#0f172a">
     <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
 <body>
     <!-- Dark Mode Toggle -->
-    <button id="darkModeToggle" class="dark-mode-toggle">🌙</button>
+    <button id="darkModeToggle" class="dark-mode-toggle" aria-label="Toggle dark mode">&#127769;</button>
 
     <!-- Navigation -->
     <nav class="navbar">
@@ -31,11 +33,41 @@
 
     <!-- Hero Section -->
     <section id="home" class="hero">
+        <div class="hero-orb hero-orb-one" aria-hidden="true"></div>
+        <div class="hero-orb hero-orb-two" aria-hidden="true"></div>
         <div class="hero-content">
-            <img src="images/Nikhil Dp.png" alt="Nikhil Kumar - Android Developer" class="profile-img">
-            <h1 data-aos="fade-up">Hi, I'm <span class="highlight">Nikhil Kumar</span></h1>
-            <p data-aos="fade-up" data-aos-delay="200">Android Developer passionate about crafting seamless, user-centric mobile experiences with Kotlin and modern Jetpack tools.</p>
-            <a href="#projects" class="cta-button" data-aos="fade-up" data-aos-delay="400">Explore My Work</a>
+            <div class="hero-copy" data-aos="fade-up">
+                <p class="eyebrow">Android Developer &bull; Kotlin &bull; Jetpack Compose</p>
+                <h1>Android developer building clean, reliable mobile apps.</h1>
+                <p class="hero-summary">I build Android products with Kotlin, Jetpack Compose, Firebase, and MVVM. My focus is readable code, smooth UI, and shipping features that are easy to maintain.</p>
+                <div class="hero-actions">
+                    <a href="#projects" class="cta-button">Explore My Work</a>
+                    <a href="nikhil_cv.pdf" class="secondary-button">View Resume</a>
+                </div>
+                <ul class="hero-stats">
+                    <li>
+                        <strong>1+</strong>
+                        <span>Years shipping Android apps</span>
+                    </li>
+                    <li>
+                        <strong>4</strong>
+                        <span>Featured projects</span>
+                    </li>
+                    <li>
+                        <strong>5</strong>
+                        <span>Technical certifications</span>
+                    </li>
+                </ul>
+            </div>
+            <div class="hero-visual" data-aos="fade-up" data-aos-delay="200">
+                <div class="profile-card">
+                    <img src="images/Nikhil Dp.png" alt="Nikhil Kumar - Android Developer" class="profile-img">
+                    <div class="profile-card-copy">
+                        <p class="profile-card-label">Available for product and Android roles</p>
+                        <p class="profile-card-meta">Focused on Kotlin, Compose, Firebase, and MVVM-based apps.</p>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -44,8 +76,7 @@
         <h2 data-aos="fade-up">About Me</h2>
         <div class="about-content" data-aos="fade-up" data-aos-delay="200">
             <p>Android Developer with 1+ years of hands-on experience building and deploying scalable, user-friendly mobile applications.</p>
-            <p>I am passionate about creating apps that offer both smooth performance and a great user experience, and I'm seeking
-                 opp ortunities to contribute my technical and problem-solving skills to innovative mobile projects.</p>
+            <p>I care about performance, clarity, and maintainable code. I&#39;m looking for opportunities to contribute my technical and problem-solving skills to product teams that value reliability and delivery.</p>
         </div>
     </section>
 
@@ -53,46 +84,75 @@
     <section id="projects" class="projects">
         <h2 data-aos="fade-up">Featured Projects</h2>
         <div class="project-grid">
-                        <!-- ===== PASTE THE NEW VIDEO PROJECT HERE ===== -->
-            <div class="project-card" data-aos="fade-up" data-aos-delay="400"
-                 data-title="Ecommerce App" 
-                 data-desc="A showcase project featuring an auto-playing video demo of an Android animation/feature. Built with modern Android tools and smooth transitions."
-                 data-tech="Kotlin, Jetpack Compose, Firebase, Room DB, Hilt DI, MVVM, Coil, Google Admob"
-                 data-video="projectVideos/demo.mp4"  
-                 data-gh="https://github.com/nikhilkr999/your-video-project-repo"
+            <div class="project-card" data-aos="fade-up" data-aos-delay="100"
+                 data-title="Flowcus App"
+                 data-desc="Flowcus is a Kotlin Android productivity app for deep work sessions, task planning, focus tracking, and distraction protection. It combines a Pomodoro-style timer with analytics, background soundscapes, and focus session controls."
+                 data-tech="Kotlin, Jetpack Compose, Material 3, Hilt, Room, Navigation Compose, Firebase Analytics, Firebase Remote Config, Firebase Storage, Google Mobile Ads, Android Service, MediaPlayer, Lottie"
+                 data-images="projectImages/flowcus/s1.png,projectImages/flowcus/s3.png,projectImages/flowcus/s4.png,projectImages/flowcus/s5.png"
+                 data-site="https://flowcus.in/"
+                 data-gh="https://github.com/nikhilkr999"
                  data-ps="">
-`
-                <div class="project-video">
-                    <video src="projectVideos/demo.mp4" autoplay muted loop playsinline></video>
+                <div class="project-media">
+                    <div class="project-images">
+                        <img src="projectImages/flowcus/s1.png" alt="Flowcus App Screenshot 1" loading="lazy">
+                        <img src="projectImages/flowcus/s3.png" alt="Flowcus App Screenshot 2" loading="lazy">
+                        <img src="projectImages/flowcus/s4.png" alt="Flowcus App Screenshot 3" loading="lazy">
+                    </div>
                 </div>
-
-                <h3>Ecommerce App</h3>
-                <p>A showcase project featuring an auto-playing video demo of an Android animation/feature.</p>
-                <div class="project-links">
-                    <a href="https://github.com/nikhilkr999/your-video-project-repo" class="gh-link">GitHub</a>
-                    <!-- Add Play Store link below if you have one -->
-                    <!-- <a href="https://play.google.com/..." class="ps-link">Play Store</a> -->
+                <div class="project-copy">
+                    <h3>Flowcus App</h3>
+                    <p>Focus timer and productivity app with task planning, analytics, background soundscapes, and distraction blocking during sessions.</p>
+                    <div class="project-links">
+                        <a href="https://flowcus.in/" class="ps-link" target="_blank" rel="noopener noreferrer">Website</a>
+                        <a href="https://github.com/nikhilkr999" class="gh-link">GitHub</a>
+                    </div>
                 </div>
             </div>
 
-            <div class="project-card" data-aos="fade-up" data-aos-delay="100" 
+            <div class="project-card" data-aos="fade-up" data-aos-delay="200"
+                 data-title="Ecommerce App"
+                 data-desc="Android ecommerce app demo with modern UI, smooth interactions, and a clean architecture approach using Jetpack tools."
+                 data-tech="Kotlin, Jetpack Compose, Firebase, Room DB, Hilt DI, MVVM, Coil, Google AdMob"
+                 data-video="projectVideos/appDemo.mp4"
+                 data-gh="https://github.com/nikhilkr999/Ecommerce-App"
+                 data-ps="">
+                <div class="project-media">
+                    <div class="project-video">
+                        <video src="projectVideos/appDemo.mp4" autoplay muted loop playsinline></video>
+                    </div>
+                </div>
+                <div class="project-copy">
+                    <span class="project-tag">Video demo</span>
+                    <h3>Ecommerce App</h3>
+                    <p>Android ecommerce app demo with modern UI and a clean architecture approach.</p>
+                    <div class="project-links">
+                        <a href="https://github.com/nikhilkr999/Ecommerce-App" class="gh-link">GitHub</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-card" data-aos="fade-up" data-aos-delay="300" 
                  data-title="Github Search App" data-desc="Built an Android app that allows users to search GitHub profiles and view their public repositories with smooth UI and fast search capabilities." 
                  data-tech="Kotlin, Jetpack Compose, Retrofit, Room DB, Hilt DI" data-images="projectImages/githubSearch/img3.png,projectImages/githubSearch/img1.png,projectImages/githubSearch/img2.png"
                  data-gh="https://github.com/nikhilkr999/Github-User-Search" data-ps="https://play.google.com/store/apps/details?id=com.nikhil.taskflow">
-                <div class="project-images">
-                    <img src="projectImages/githubSearch/img3.png" alt="Github Search App Screenshot 1" loading="lazy">
-                    <img src="projectImages/githubSearch/img1.png" alt="Github Search App Screenshot 2" loading="lazy">
-                    <img src="projectImages/githubSearch/img2.png" alt="Github Search App Screenshot 3" loading="lazy">
+                <div class="project-media">
+                    <div class="project-images">
+                        <img src="projectImages/githubSearch/img3.png" alt="Github Search App Screenshot 1" loading="lazy">
+                        <img src="projectImages/githubSearch/img1.png" alt="Github Search App Screenshot 2" loading="lazy">
+                        <img src="projectImages/githubSearch/img2.png" alt="Github Search App Screenshot 3" loading="lazy">
+                    </div>
                 </div>
-                <h3>Github Search App</h3>
-                <p>Built an Android app that allows users to search GitHub profiles and view their public repositories.</p>
-                <div class="project-links">
-                    <a href="https://github.com/nikhilkr999/Github-User-Search" class="gh-link">GitHub</a>
-                    <a href="#" class="ps-link">Play Store</a>
+                <div class="project-copy">
+                    <h3>Github Search App</h3>
+                    <p>Built an Android app that allows users to search GitHub profiles and view their public repositories.</p>
+                    <div class="project-links">
+                        <a href="https://github.com/nikhilkr999/Github-User-Search" class="gh-link">GitHub</a>
+                        <a href="https://play.google.com/store/apps/details?id=com.nikhil.taskflow" class="ps-link" target="_blank" rel="noopener noreferrer">Play Store</a>
+                    </div>
                 </div>
             </div>
             
-            <div class="project-card" data-aos="fade-up" data-aos-delay="200" 
+            <div class="project-card" data-aos="fade-up" data-aos-delay="400" 
                  data-title="ExpenseTracker App" data-desc="Developed a comprehensive mobile application for personal finance management,
                   enabling users to track daily expenses, analyze spending patterns, and export data.Key features include:
                   
@@ -106,33 +166,20 @@
                   " 
                  data-tech="Kotlin, Room, MVVM" data-images="projectImages/ExpenceTracker/img3.png,projectImages/ExpenceTracker/img2.png,projectImages/ExpenceTracker/img1.png"
                  data-gh="https://github.com/nikhilkr999/Expense-Tracker-App" data-ps="https://play.google.com/store/apps/details?id=com.nikhil.fittrack">
-                <div class="project-images">
-                    <img src="projectImages/ExpenceTracker/img3.png" alt="ExpenceTracker App Screenshot 1" loading="lazy">
-                    <img src="projectImages/ExpenceTracker/img2.png" alt="ExpenceTracker App Screenshot 2" loading="lazy">
-                    <img src="projectImages/ExpenceTracker/img1.png" alt="ExpenceTracker App Screenshot 3" loading="lazy">
+                <div class="project-media">
+                    <div class="project-images">
+                        <img src="projectImages/ExpenceTracker/img3.png" alt="ExpenceTracker App Screenshot 1" loading="lazy">
+                        <img src="projectImages/ExpenceTracker/img2.png" alt="ExpenceTracker App Screenshot 2" loading="lazy">
+                        <img src="projectImages/ExpenceTracker/img1.png" alt="ExpenceTracker App Screenshot 3" loading="lazy">
+                    </div>
                 </div>
-                <h3>ExpenseTracker App</h3>
-                <p>Developed a comprehensive mobile application for personal finance management, enabling users to track daily expenses, analyze spending patterns, and export data</p>
-                <div class="project-links">
-                    <a href="https://github.com/nikhilkr999/Expense-Tracker-App" class="gh-link">GitHub</a>
-                    <a href="#" class="ps-link">Play Store</a>
-                </div>
-            </div>
-            <div class="project-card" data-aos="fade-up" data-aos-delay="300" 
-                 data-title="E-commerce website clone" data-desc="Created a responsive e-commerce website clone replicating the UI and layout of a modern shopping platform.
-Focused on pixel-perfect design, product grid layout, and interactive navigation experience." 
-                 data-tech="html, css, javascript" data-images="projectImages/ecommWeb/img4.png,projectImages/ecommWeb/img3.png,projectImages/ecommWeb/img1.png"
-                 data-gh="https://github.com/nikhilkr999/Responsive-E-Commerce-Website" data-apk="https://nikhilkr999.github.io/Responsive-E-Commerce-Website/"> <!-- Change to your APK if available -->
-                <div class="project-images">
-                    <img src="projectImages/ecommWeb/img4.png" alt="EcoShop Screenshot 1" loading="lazy">
-                    <img src="projectImages/ecommWeb/img3.png" alt="EcoShop Screenshot 2" loading="lazy">
-                    <img src="projectImages/ecommWeb/img1.png" alt="EcoShop Screenshot 3" loading="lazy">
-                </div>
-                <h3>E-commerce website clone</h3>
-                <p>Created a responsive e-commerce website clone replicating the UI and layout of a modern shopping platform.</p>
-                <div class="project-links">
-                    <a href="https://github.com/nikhilkr999/Responsive-E-Commerce-Website" class="gh-link">GitHub</a>
-                    <a href="https://nikhilkr999.github.io/Responsive-E-Commerce-Website/" class="apk-link" download>Live Demo</a>
+                <div class="project-copy">
+                    <h3>ExpenseTracker App</h3>
+                    <p>Developed a comprehensive mobile application for personal finance management, enabling users to track daily expenses, analyze spending patterns, and export data.</p>
+                    <div class="project-links">
+                        <a href="https://github.com/nikhilkr999/Expense-Tracker-App" class="gh-link">GitHub</a>
+                        <a href="https://play.google.com/store/apps/details?id=com.nikhil.fittrack" class="ps-link" target="_blank" rel="noopener noreferrer">Play Store</a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -168,7 +215,7 @@ Focused on pixel-perfect design, product grid layout, and interactive navigation
             <h3>Programming in C++</h3>
             <p class="issuer">NPTEL</p>
             <div class="cert-actions">
-                <a href="https://archive.nptel.ac.in/content/noc/NOC19/SEM2/Ecertificates/106/noc19-cs38/Course/NPTEL19CS38S11920024191017258.jpg" target="_blank" class="btn-verify">Verify Credential ↗</a>
+                <a href="https://archive.nptel.ac.in/content/noc/NOC19/SEM2/Ecertificates/106/noc19-cs38/Course/NPTEL19CS38S11920024191017258.jpg" target="_blank" rel="noopener noreferrer" class="btn-verify">Verify Credential &#8599;</a>
             </div>
         </div>
     </div>
@@ -181,7 +228,7 @@ Focused on pixel-perfect design, product grid layout, and interactive navigation
             <h3>Programming in C</h3>
             <p class="issuer">NPTEL</p>
             <div class="cert-actions">
-                <a href="https://archive.nptel.ac.in/content/noc/NOC18/SEM2/Ecertificates/106/noc18-cs33/Course/NPTEL18CS33S219001191810067657.jpg" target="_blank" class="btn-verify">Verify Credential ↗</a>
+                <a href="https://archive.nptel.ac.in/content/noc/NOC18/SEM2/Ecertificates/106/noc18-cs33/Course/NPTEL18CS33S219001191810067657.jpg" target="_blank" rel="noopener noreferrer" class="btn-verify">Verify Credential &#8599;</a>
             </div>
         </div>
     </div>
@@ -194,7 +241,7 @@ Focused on pixel-perfect design, product grid layout, and interactive navigation
             <h3>Core Java</h3>
             <p class="issuer">Udemy</p>
             <div class="cert-actions">
-                <a href="https://www.udemy.com/certificate/UC-092fb0cf-5b73-4d4e-a9b0-ae593c7a5eab/" target="_blank" class="btn-verify">Verify Credential ↗</a>
+                <a href="https://www.udemy.com/certificate/UC-092fb0cf-5b73-4d4e-a9b0-ae593c7a5eab/" target="_blank" rel="noopener noreferrer" class="btn-verify">Verify Credential &#8599;</a>
             </div>
         </div>
     </div>
@@ -207,7 +254,7 @@ Focused on pixel-perfect design, product grid layout, and interactive navigation
             <h3>Android Development</h3>
             <p class="issuer">Udemy</p>
             <div class="cert-actions">
-                <a href="https://www.udemy.com/certificate/UC-98bc61f8-bcd8-4592-8447-de67aceff01e/" target="_blank" class="btn-verify">Verify Credential ↗</a>
+                <a href="https://www.udemy.com/certificate/UC-98bc61f8-bcd8-4592-8447-de67aceff01e/" target="_blank" rel="noopener noreferrer" class="btn-verify">Verify Credential &#8599;</a>
             </div>
         </div>
     </div>
@@ -220,7 +267,7 @@ Focused on pixel-perfect design, product grid layout, and interactive navigation
             <h3>Jetpack Compose</h3>
             <p class="issuer">Udemy</p>
             <div class="cert-actions">
-                <a href="https://www.udemy.com/certificate/UC-c123ae7f-f4a9-4d7b-8720-ee3331e4d9d0/" target="_blank" class="btn-verify">Verify Credential ↗</a>
+                <a href="https://www.udemy.com/certificate/UC-c123ae7f-f4a9-4d7b-8720-ee3331e4d9d0/" target="_blank" rel="noopener noreferrer" class="btn-verify">Verify Credential &#8599;</a>
             </div>
         </div>
     </div>
@@ -232,17 +279,20 @@ Focused on pixel-perfect design, product grid layout, and interactive navigation
     <section id="contact" class="contact">
         <h2 data-aos="fade-up">Get in Touch</h2>
         <p data-aos="fade-up" data-aos-delay="200">Ready to discuss a project or collaboration? Drop me a line!</p>
-        <form id="contactForm" data-aos="fade-up" data-aos-delay="400">
+        <form id="contactForm" data-email="nk17cse0351@gmail.com" data-aos="fade-up" data-aos-delay="400">
             <input type="text" name="name" placeholder="Your Name" required>
             <input type="email" name="email" placeholder="Your Email" required>
             <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
-            <button type="submit">Send Message</button>
+            <button type="submit">Open Email App</button>
         </form>
         <div class="contact-links" data-aos="fade-up" data-aos-delay="600">
             <p>Email: nk17cse0351@gmail.com</p>
             <p>
-                <a href="https://www.linkedin.com/in/nikhil-kumar-6b60aa235/" target="_blank">LinkedIn</a> |
-                <a href="https://github.com/nikhilkr999" target="_blank">GitHub</a>
+                <a href="https://www.linkedin.com/in/nikhil-kumar-6b60aa235/" target="_blank" rel="noopener noreferrer">LinkedIn</a> |
+                <a href="https://github.com/nikhilkr999" target="_blank" rel="noopener noreferrer">GitHub</a>
+            </p>
+            <p>
+                <a href="mailto:nk17cse0351@gmail.com">Email me directly</a>
             </p>
             <a href="nikhil_cv.pdf" download data-aos="fade-up" data-aos-delay="800">Download Resume</a>
         </div>
@@ -259,12 +309,6 @@ Focused on pixel-perfect design, product grid layout, and interactive navigation
             <div id="modalLinks" class="modal-links"></div>
         </div>
     </div>
-    </div>
-
-        <div id="imageModal" class="image-modal">
-        <span class="image-close">&times;</span>
-        <img class="modal-image-content" id="fullImage">
-    </div>
 
     <!-- AOS JS CDN -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
