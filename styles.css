@@ -494,7 +494,8 @@ h2::after {
 }
 
 .project-card[data-video] .project-video {
-    min-height: 150px;
+    min-height: 180px;
+    height: 180px;
 }
 
 .project-video::after {
